@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!--@thymesVar id="post" type="your.package.Post"-->
-    <!--@thymesVar id="title" type="String"-->
-    <!--@thymesVar id="content" type="String"-->
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <ul>
-      <li th:each="dto, state : ${list}">
-<!--         [[${state.count}]] -&#45;&#45; [[${dto}]]-->
-          <span th:if="${dto.sno % 5 == 0}" th:text="${dto.sno % 5 ==0}?${'---------------'+dto.sno}:${dto.first}"></span>
-          <span th:unless="${dto.sno % 5 == 0 }" th:text="${dto.first}"></span>
-      </li>
-    </ul>
+<!--<style>-->
+<!--    .target{-->
+<!--        background-color: red;-->
+<!--    }-->
+<!--</style>-->
+<!--    <ul>-->
+<!--      <li th:each="dto, state : ${list}">-->
+<!--       [[${state}]] -&#45;&#45; [[${dto}]]&ndash;&gt;-->
+<!--          <span th:class="${dto.sno % 5 ==0}?'target'" th:text="${dto.sno % 5 ==0}? ${'-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;'+dto.sno}: ${dto.first}"></span>-->
+<!--          <span th:unless="${dto.sno % 5 == 0 }" th:text="${dto.first}"></span>-->
+<!--      </li>-->
+<!--    </ul>-->
+
+<ul>
+    <th:block th:each="dto: ${list}">
+        <li th:text="${dto.sno % 5 == 0}?${dto.sno}:${dto.first}"></li>
+    </th:block>
+</ul>
+
 </body>
 </html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li th:each="dto:${list}">
+<!--            <a th:href="@{/sample/exLink/{sno}(sno=${dto.sno})}">[[${dto.first}]]</a>-->
+<!--[[${#numbers.formatInteger(dto.sno,5)}]] //thymeleaf내장 객체인 #numbers.formatInteger 를 활용해 숫자 5자리 출력-->
+<!--            thymeleaf-extras-java8time 의존성 추가 > 내장객체 #temporals.format을 활용해 날짜출력-->
+            [[${dto.sno}]] --- [[${#temporals.format(dto.regTime,'yyyy/mm/dd')}]]
+        </li>
+    </ul>
+</body>
+</html>

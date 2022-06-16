@@ -5,24 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-<!--<style>-->
-<!--    .target{-->
-<!--        background-color: red;-->
-<!--    }-->
-<!--</style>-->
-<!--    <ul>-->
-<!--      <li th:each="dto, state : ${list}">-->
-<!--       [[${state}]] -&#45;&#45; [[${dto}]]&ndash;&gt;-->
+<style>
+    .target{
+        background-color: red;
+    }
+</style>
+    <ul>
+      <li th:each="dto, state : ${list}">
+       [[${state}]] --- [[${dto}]]-->
 <!--          <span th:class="${dto.sno % 5 ==0}?'target'" th:text="${dto.sno % 5 ==0}? ${'-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;'+dto.sno}: ${dto.first}"></span>-->
 <!--          <span th:unless="${dto.sno % 5 == 0 }" th:text="${dto.first}"></span>-->
-<!--      </li>-->
-<!--    </ul>-->
+      </li>
+    </ul>
 
-<ul>
-    <th:block th:each="dto: ${list}">
-        <li th:text="${dto.sno % 5 == 0}?${dto.sno}:${dto.first}"></li>
-    </th:block>
-</ul>
+<!--<ul>-->
+<!--    <th:block th:each="dto: ${list}">-->
+<!--        <li th:text="${dto.sno % 5 == 0}?${dto.sno}:${dto.first}">-->
+<!--            -->
+<!--        </li>-->
+<!--    </th:block>-->
+<!--</ul>-->
 
 </body>
 </html>

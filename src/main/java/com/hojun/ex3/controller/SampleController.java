@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @Controller
-@RequestMapping("/sample")
+@RequestMapping("/ex3test/sample")
 @Log4j2
 
 public class SampleController {
@@ -61,4 +61,10 @@ public class SampleController {
     public void ex3(){
         log.info("ex3");
     }
+
+    @GetMapping({"/exLayout1","/exLayout2","/exTemplate"})
+    public void exLayout1(){
+        log.info("exLayout.......");
+    }
+
 }
